@@ -1,0 +1,32 @@
+[
+    {
+        "name": "3tfk",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "PHSMRYYETATSRRGLGEPRYTSVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQVAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQRMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QLSDVPMDL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTF",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "AVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

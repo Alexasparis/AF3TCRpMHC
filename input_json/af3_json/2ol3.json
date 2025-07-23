@@ -1,0 +1,38 @@
+[
+    {
+        "name": "2ol3",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GPHSLRYFVTAVSRPGLGEPRFISVGYVDNTEFVRFDSDAENPRYEPRARWMEQEGPEYWERETQKAKGNEQSFRVDLRTLLGYYNQSKGGSHTIQVISGCEVGSDGRLLRGYQQYAYDGCDYIALNEDLKTWTAADMAALITKHKWEQAGEAERLRAYLEGTCVEWLRRYLKNGNATLLRTDSPKAHVTHHSRPEDKVTLRCWALGFYPADITLTWQLNGEELIQDMELVETRPAGDGTFQKWASVVVPLGKEQYYTCHVYHQGLPEPLTLRWEP",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MIQKTPQIQVYSRHPPENGKPNILNCYVTQFHPPHIEIQMLKNGKKIPKVEMSDMSFSKDWSFYILAHTEFTPTETDTYACRVKHDSMAEPKTVYWDRDM",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "SQYYYNSL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QKVTQTQTSISVMEKTTVTMDCVYETQDSSYFLFWYKQTASGEIVFLIRQDSYKKENATVGHYSLNFQKPKSSIGLIITATQIEDSAVYFCAMRGDYGGSGNKLIFGTGTLLSVKPGS",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "VTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSADRVGNTLYFGEGSRLIVV",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

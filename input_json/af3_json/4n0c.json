@@ -1,0 +1,32 @@
+[
+    {
+        "name": "4n0c",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "PHSMRYYETATSRRGGEPRYTSVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQIAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQWMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MPAGRPWDL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "AQSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGLQMLLKYYSGDPVVQGVNGFEAEFSKSDSSFHLRKASVHWSDSAVYFCAVSAKGTGSKLSFGKGAKLTVSPNIQNPDPAVYQLRDSKSSSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANFNNSIIPE",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "AVTQSPRNKVTVTGGNVTLSCRQTNSHNYMYWYRQDTGHGLRLIHYSYGAGNLQIGDVPDGYKATRTTQEDFFLLLELASPSQTSLYFCASSDAPGQLYFGEGSKLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "2oi9",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GPHSMRYYETATSRRGLGEPRYTSVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQVAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQRMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QLSPFPFDL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGPQLLLKYYSGDPVVQGVNGFEAEFSKSNSSFHLRKASVHRSDSAVYFCAVSGFASALTFGSGTKVIVL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "EAAVTQSPRNKVAVTGEKVTLSCNQTNNHNNMYWYRQDTGHELRLIYYSYGAGSTEKGDIPDGYKASRPSQENFSLTLESATPSQTSVYFCASGGGGTLYFGAGTRLSVLS",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

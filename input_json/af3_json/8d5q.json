@@ -1,0 +1,32 @@
+[
+    {
+        "name": "8d5q",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GPHSMRYYETATSRRGLGEPRYTSVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQVAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQWMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNGN",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "HPGSVNEFDF",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MDSVTQTEGQVALSEEDFLTIHCNYSASGYPALFWYVQYPGEGPQFLFRASRDKEKGSSRGFEATYNKETTSFHLQKASVQESDSAVYYCALGDPTGANTGKLTFGHGTILRVHPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSQSKDSDVYITDKCVLDMRSMDFKSNSAVAWSNKSDFACANAFNNSIIPEDTFFPS",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "MTLLEQNPRWRLVPRGQAVNLRCILKNSQYPWMSWYQQDLQKQLQWLFTLRSPGDKEVKSLPGADYLATRVTDTELRLQVANMSQGRTLYCTCSAGRGGYAEQFFGPGTRLTVLEDLKNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQNPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRAD",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

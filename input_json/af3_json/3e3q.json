@@ -1,0 +1,32 @@
+[
+    {
+        "name": "3e3q",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GPHSMRYYETATSRRGLGEPRYTSVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQVAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQRMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QLSPFPFDL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "SVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGPQLLLKYYSGDPVVQGVNGFEAEFSKSNSSFHLRKASVHRSDSAVYFCAVSDPPPLLTFGSGTKVIVL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "EAAVTQSPRNKVAVTGEKVTLSCNQTNNHNNMYWYRQDTGHELRLIYYSYGAGSTEKGDIPDGYKASRPSQENFSLTLESATPSQTSVYFCASGGGGTLYFGAGTRLSVLS",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

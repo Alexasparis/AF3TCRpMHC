@@ -1,0 +1,32 @@
+[
+    {
+        "name": "2e7l",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "GPHSMRYFETAVSRRGLGEPRYISVGYVDDKEFVRFDSDAENPRYEPQVPWMEQEGPEYWERITQVAKGQEQWFRVNLRTLLGYYNQSAGGTHTLQRMYGCDVGSDGRLLRGYEQFAYDGCDYIALNEDLRTWTAADMAAQITRRKWEQAGAAEYYRAYLEGECVEWLHRYLKNG",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QLSPFPFDL",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "QSVTQPDARVTVSEGASLQLRCKYSYSATPYLFWYVQYPRQGPQLLLKYYSGDPVVQGVNGFEAEFSKSNSSFHLRKASVHRSDSAVYFCAVSHQGRYLTFGSGTKVIVLPY",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "EAAVTQSPRNKVAVTGEKVTLSCNQTNNHNNMYWYRQDTGHELRLIYYSYGAGSTEKGDIPDGYKASRPSQENFSLTLESATPSQTSVYFCASGGGGTLYFGAGTRLSVLSS",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]

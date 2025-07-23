@@ -1,0 +1,38 @@
+[
+    {
+        "name": "5d2l",
+        "modelSeeds": [],
+        "sequences": [
+            {
+                "proteinChain": {
+                    "sequence": "SHSMRYFFTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDGETRKVKAHSQTHRVDLGTLRGYYNQSEAGSHTVQRMYGCDVGSDWRFLRGYHQYAYDGKDYIALKEDLRSWTAADMAAQTTKHKWEAAHVAEQLRAYLEGTCVEWLRRYLENGKETLQRTDAPKTHMTHHAVSDHEATLRCWALSFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGQEQRYTCHVQHEGLPKPLTLRWE",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "IQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "NLVPMVATV",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "ILNVEQSPQSLHVQEGDSTNFTCSFPSSNFYALHWYRWETAKSPEALFVMTLNGDEKKKGRISATLNTKEGYSYLYIKGSQPEDSATYLCAFITGNQFYFGTGTSLTVIPNIQNPDPAVYQLRDSDKSVCLFTDFDSQTNVSQSSDVYITDKCVLDDFKSNSAVAWSNKSDFACANAFNIPEDTF",
+                    "count": 1
+                }
+            },
+            {
+                "proteinChain": {
+                    "sequence": "GVSQSPSNKVTEKGKDVELRCDPISGHTALYWYRQRLGQGLEFLIYFQGNSAPDKSGLPSDRFSAERTSVSTLTIQRTQQEDSAVYLCASSQTQLWETQYFGPGTRLLVLEDNVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPNDSRYALSSRLRVSATFWQRNHFRCQVQFYGLSENDEWAKPVTQIVSAEAW",
+                    "count": 1
+                }
+            }
+        ]
+    }
+]
