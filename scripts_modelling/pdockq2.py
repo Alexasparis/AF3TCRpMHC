@@ -1,15 +1,10 @@
 from Bio.PDB import PDBIO
 from Bio.PDB.PDBParser import PDBParser
-from Bio.PDB.Selection import unfold_entities
 
 import numpy as np
-import sys,os
 import argparse
-import pickle
-import itertools
 import pandas as pd
 from scipy.optimize import curve_fit
-import json
 
 parser = argparse.ArgumentParser(description = '''Calculate chain_level pDockQ_i. ''')
 parser.add_argument('-pae', nargs=1, type= str, required=True, help ='Input matrix file.')

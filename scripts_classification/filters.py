@@ -30,7 +30,7 @@ def create_nonoverlapping_folds(df, n_splits=5, random_state=42):
         List of (train_df, test_df) folds.
     """
     rng = np.random.default_rng(random_state)
-    
+    df['avgpdockq2'] = df[['pdockq2_a', 'pdockq2_b']].mean(axis=1)
     # Unique pdbs and their quality (take first occurrence)
     pdb_quality = df.drop_duplicates('pdb_id')[['pdb_id','Quality']].copy()
 
@@ -238,6 +238,7 @@ def assign_predicted_quality(
     df,
     metrics_list,       # list of metric tuples per filter: [metrics1, metrics2, metrics3]
     operators_list,     # list of operator tuples per filter: [ops1, ops2, ops3]
+    thresholds,
     splits=['LQ_vs_rest','LQ/AQ_vs_MQ/HQ','LQ/AQ/MQ_vs_HQ'],
 ):
     """
@@ -262,14 +263,7 @@ def assign_predicted_quality(
     df : pd.DataFrame
         Original df with a new column 'quality_pred' containing predicted quality.
     """
-
-    thresholds = {
-        'plddt':[70,90],'cdr1b_plddt':[70,90],'cdr2a_plddt':[70,90],
-        'cdr3a_plddt':[70,90],'cdr1b_plddt':[70,90],'cdr2b_plddt':[70,90],
-        'cdr3b_plddt':[70,90],'iptm_mean':[0.6,0.8],'iptm_tcrpmhc':[0.6,0.8],
-        'ipsae':[0.6,0.8],'avgpdockq2':[0.23,0.49,0.8],'pdockq':[0.23,0.49,0.8]
-    }
-
+    df['avgpdockq2'] = df[['pdockq2_a', 'pdockq2_b']].mean(axis=1)
     def binarize(series, metric):
         thr = thresholds[metric]
         if len(thr) == 2:
@@ -356,14 +350,28 @@ Modes of operation:
 
     metrics_all=['plddt','cdr1a_plddt','cdr2a_plddt','cdr3a_plddt','cdr1b_plddt','cdr2b_plddt','cdr3b_plddt','iptm_mean','ipsae','iptm_tcrpmhc','pdockq','avgpdockq2']
 
-    thresholds={'plddt':[70,90],'cdr1a_plddt':[70,90],'cdr2a_plddt':[70,90],'cdr3a_plddt':[70,90],'cdr1b_plddt':[70,90],'cdr2b_plddt':[70,90],'cdr3b_plddt':[70,90],'iptm_mean':[0.6,0.8],'ipsae':[0.6,0.8],'iptm_tcrpmhc':[0.6,0.8],'pdockq':[0.23,0.49],'avgpdockq2':[0.23,0.49,0.8]}
-
+    thresholds = {
+        'plddt':[70,90],
+        'cdr1a_plddt':[70,90],
+        'cdr2a_plddt':[70,90],
+        'cdr3a_plddt':[70,90],
+        'cdr1b_plddt':[70,90],
+        'cdr2b_plddt':[70,90],
+        'cdr3b_plddt':[70,90],
+        'iptm_mean':[0.6,0.8],
+        'ipsae':[0.6,0.8],
+        'iptm_tcrpmhc':[0.6,0.8],
+        'pdockq':[0.23,0.49,0.8],
+        'avgpdockq2':[0.23,0.49,0.8]
+    }
     if args.cv:
         folds=create_nonoverlapping_folds(df,n_splits=5)
         results_df=explore_filters(folds,metrics_all,thresholds,target_col="Quality",tiers_negative=args.tiers_negative,tiers_positive=args.tiers_positive)
         results_df["harmonic_mean"]=2*results_df["recall_mean"]*(1-results_df["false_positive_rate_mean"])/(results_df["recall_mean"]+(1-results_df["false_positive_rate_mean"]))
         results_sorted=results_df.sort_values("harmonic_mean",ascending=False).reset_index(drop=True)
-        out=f"../filters/filter_{args.tiers_negative}_{args.tiers_positive}.csv"
+        neg_str = "_".join(args.tiers_negative)
+        pos_str = "_".join(args.tiers_positive)
+        out=f"../filters/filter_{neg_str}_vs_{pos_str}.csv"
         results_sorted.to_csv(out,index=False)
 
         print("\nTop filters:")
@@ -371,11 +379,12 @@ Modes of operation:
 
         best_filter=results_sorted.iloc[0]
         print("\nBest filter:",best_filter)
-
+        metrics = ast.literal_eval(best_filter['metrics']) if isinstance(best_filter['metrics'], str) else list(best_filter['metrics'])
+        operators = ast.literal_eval(best_filter['operators']) if isinstance(best_filter['operators'], str) else list(best_filter['operators'])
         result_dict = evaluate_filter(
             folds_or_df=folds,
-            metrics=ast.literal_eval(best_filter['metrics']),
-            operators=ast.literal_eval(best_filter['operators']),
+            metrics=metrics,
+            operators=operators,
             thresholds=thresholds,
             target_col='Quality',
             tiers_negative=args.tiers_negative,
@@ -383,7 +392,7 @@ Modes of operation:
         )
         print("\nEvaluation of best filter in test sets:",result_dict)
         eval_df = pd.DataFrame([result_dict])
-        out_eval = f"../filters/eval_{args.tiers_negative}_{args.tiers_positive}.csv"
+        out_eval = f"../filters/eval_{neg_str}_vs_{pos_str}.csv"
         eval_df.to_csv(out_eval, index=False)
         print(f"Saved to {out_eval}")
 
@@ -397,7 +406,7 @@ Modes of operation:
         if len(metrics_list)!=3 or len(operators_list)!=3:
             raise ValueError("assign_predicted_quality requires 3 filters to assign LQ, AQ, MQ, HQ")
 
-        preds_df=assign_predicted_quality(df,metrics_list,operators_list,splits=['LQ_vs_rest','LQ/AQ_vs_MQ/HQ','LQ/AQ/MQ_vs_HQ'])
+        preds_df=assign_predicted_quality(df,metrics_list,operators_list,thresholds,splits=['LQ_vs_rest','LQ/AQ_vs_MQ/HQ','LQ/AQ/MQ_vs_HQ'])
 
         out="../filters/predicted_qualities.csv"
         preds_df.to_csv(out,index=False)
