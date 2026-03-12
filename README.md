@@ -84,7 +84,7 @@ Required Python packages:
 
 ## Usage 
 
-### 1 Model vs. experimental reference comparisons and quality tier assignment
+### 1 Model vs. experimental reference comparisons and quality tier assignment
 ```bash
 python model_vs_reference.py --reference_dir ../data/20250813_PDB_TCRpMHC_classI --model_superdir ../data/20250813_PDB_models_TCRpMHC_classI --output ../data/model_vs_reference.csv --workers 1
 ```
@@ -101,7 +101,7 @@ Compare computational TCR-pMHC models against experimental PDB structures and as
 **Output**
 CSV file containing per-model structural comparison metrics and ground truth quality tiers.
 
-### 2 Model confidence scores computation
+### 2 Model confidence scores computation
 ```bash
 python caculate_confidence_metrics.py ../data/20250813_PDB_models_TCRpMHC_classI --output metrics.csv --threshold 70 --workers 1 --fast
 ```
@@ -119,7 +119,7 @@ Calculate confidence metrics for predicted TCR-pMHC models. These metrics evalua
 **Output**
 CSV file with confidence scores for each model.
 
-### 3 Reference-free quality assignment
+### 3 Reference-free quality assignment
 
 #### 3.1 Using filters of confidence metrics (discrete assignment)
 
