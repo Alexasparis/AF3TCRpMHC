@@ -42,7 +42,7 @@ Required Python packages:
 ```bash
 ./
 ├── README.md
-├── graphical_abstract.svg # Visual summary of the pipeline
+├── graphical_abstract.png # Visual summary of the pipeline
 ├── requirements.txt # Project dependencies
 ├── classifier/ # Trained models
 │ └── rf_model_all.pkl
