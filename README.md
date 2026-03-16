@@ -143,7 +143,7 @@ Optimize based on the harmonic mean of specificity and recall.
 CSV with all evaluated filters in the training sets: ../filters/filter_<tiers_negative>_<tiers_positive>.csv
 Evaluation CSV of the best filter on the test sets: ../filters/eval_<tiers_negative>_<tiers_positive>.csv
 
-##### Apply pre-defined filters to assign predicted quality
+##### Apply pre-defined filters to assign predicted quality
 ```bash
 python filters.py \
     --input_csv ../data/model_confidence_metrics.csv \
