@@ -203,8 +203,9 @@ CSV with predicted continuous quality scores for each model:
 
 If you use this repository or its data, please cite our publication:
 
-**A Unified Framework for TCR-pMHC Structural Model Assessment**  
+**Structural quality-tier assessment for TCR-pMHC functional enrichment. Front. Immunol. 17, (2026).**  
 Alex Ascunce-París, Roc Farriol-Duran, Miguel Romero-Durana, Alfonso Valencia, Víctor Guallar  
-[doi:10.1101/2025.10.09.681411](https://doi.org/10.1101/2025.10.09.681411)
+[https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1869810/abstract]
 
-> Note: The datasets used in this publication will be made available soon.
+> Note: The datasets used in this publication are available on:
+https://huggingface.co/datasets/Alexasparis/AF3TCRpMHC/
