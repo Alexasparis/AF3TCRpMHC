@@ -203,9 +203,9 @@ CSV with predicted continuous quality scores for each model:
 
 If you use this repository or its data, please cite our publication:
 
-**Structural quality-tier assessment for TCR-pMHC functional enrichment. Front. Immunol. 17, (2026).**  
-Alex Ascunce-París, Roc Farriol-Duran, Miguel Romero-Durana, Alfonso Valencia, Víctor Guallar  
-[https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1869810/abstract]
+Structural quality-tier assessment for TCR-pMHC functional enrichment. Front. Immunol. 17:1869810. doi: 10.3389/fimmu.2026.1869810
+Ascunce-París A, Romero-Durana M, Valencia A, Farriol-Duran R and Guallar V (2026). 
+[https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1869810/full]
 
 > Note: The datasets used in this publication are available on:
 https://huggingface.co/datasets/Alexasparis/AF3TCRpMHC/
