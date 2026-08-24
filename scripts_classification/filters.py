@@ -102,48 +102,59 @@ def explore_filters(folds_or_df, metrics, thresholds, target_col='Quality',
     else:
         folds = folds_or_df
 
+    # Pre-compute per fold, once. None of this depends on (comb, ops), so doing it
+    # inside the combination loop repeated it ~265k times for no reason.
+    fold_cache = []
+    for train_df, _ in folds:
+        tier_num = train_df[target_col].map(tier_map)
+        keep = tier_num.isin(neg_nums + pos_nums).values
+        if not keep.any():
+            continue
+
+        # Binarize metrics
+        n_rows = int(keep.sum())
+        binarized_arr = np.zeros((n_rows, len(metrics)), dtype=bool)
+        for j, m in enumerate(metrics):
+            thr = thresholds[m]
+            # pick threshold based on tiers_positive (simplified: take max)
+            idx_thr = 0 if len(thr)==2 else 1
+            thr_val = thr[idx_thr]
+            binarized_arr[:, j] = train_df[m].values[keep] > thr_val
+
+        is_pos = np.isin(tier_num.values[keep], pos_nums)
+        fold_cache.append((binarized_arr, is_pos, int(is_pos.sum()), n_rows - int(is_pos.sum())))
+
+    # Column index per metric name, also loop-invariant.
+    metric_pos = {m: j for j, m in enumerate(metrics)}
+
     for idx, (comb, ops) in enumerate(comb_list, 1):
         if idx % 1000 == 0 or idx == 1:
             print(f"Processing combination {idx}/{len(comb_list)}")
         precisions, recalls, fprs = [], [], []
 
-        for train_df, _ in folds:
-            df_eval = train_df.copy()
-            df_eval['tier_num'] = df_eval[target_col].map(tier_map)
-            df_eval = df_eval[df_eval['tier_num'].isin(neg_nums + pos_nums)]
-            if df_eval.empty:
-                continue
+        comb_idx = [metric_pos[m] for m in comb]
 
-            # Binarize metrics
-            binarized_arr = np.zeros((len(df_eval), len(metrics)), dtype=bool)
-            for j, m in enumerate(metrics):
-                thr = thresholds[m]
-                # pick threshold based on tiers_positive (simplified: take max)
-                idx_thr = 0 if len(thr)==2 else 1
-                thr_val = thr[idx_thr]
-                binarized_arr[:, j] = df_eval[m].values > thr_val
-
+        for binarized_arr, is_pos, n_pos, n_neg in fold_cache:
             # Apply metric combination
-            comb_idx = [metrics.index(m) for m in comb]
-            arr = binarized_arr[:, comb_idx]
-
-            result = arr[:, 0].copy()
+            result = binarized_arr[:, comb_idx[0]].copy()
             for i, op in enumerate(ops):
+                col = binarized_arr[:, comb_idx[i+1]]
                 if op == 'AND':
-                    result &= arr[:, i+1]
+                    result &= col
                 else:
-                    result |= arr[:, i+1]
+                    result |= col
 
-            y_true = df_eval['tier_num'].isin(pos_nums).astype(int)
-            y_pred = result.astype(int)
+            # Confusion counts from a single AND-reduction; the rest follow from
+            # the per-fold totals. Matches sklearn's zero_division=0 convention.
+            TP = int(np.count_nonzero(result & is_pos))
+            n_pred_pos = int(np.count_nonzero(result))
+            FP = n_pred_pos - TP
+            FN = n_pos - TP
+            TN = n_neg - FP
 
-            precisions.append(precision_score(y_true, y_pred, zero_division=0))
-            recalls.append(recall_score(y_true, y_pred, zero_division=0))
-
-            FP = np.sum((y_pred==1) & (df_eval['tier_num'].isin(neg_nums)))
-            TN = np.sum((y_pred==0) & (df_eval['tier_num'].isin(neg_nums)))
-            fpr_fold = FP / (FP+TN) if (FP+TN)>0 else np.nan
-            fprs.append(fpr_fold)
+            precisions.append(TP / (TP + FP) if (TP + FP) > 0 else 0.0)
+            recalls.append(TP / (TP + FN) if (TP + FN) > 0 else 0.0)
+            fprs.append(FP / (FP + TN) if (FP + TN) > 0 else np.nan)
 
         results.append({
             'metrics': comb,
